@@ -1,0 +1,42 @@
+@import '../../../comum/assets/less/_variables.less';
+
+#projects {
+    .no-videos{
+        text-align: center;
+        padding: 6rem;
+    }
+
+    .tabs-links {
+        .row {
+            .portfolio-filter {
+                li {
+
+                    &.active,
+                    &:hover {
+                        a {
+                            color: white;
+                            border-color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .projects-grid{
+        padding-left: 0;
+
+        .grid-item{
+            .dim(100%, auto);
+
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+
+            iframe{
+                .dim(100%, auto);
+                min-height: 450px;
+            }
+        }
+    }
+}

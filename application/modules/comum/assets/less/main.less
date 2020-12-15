@@ -1,0 +1,80 @@
+//=====================================
+//  IMPORTS
+//=====================================
+@import '../../../comum/assets/css/normalize.css';
+@import '../../../comum/assets/less/_variables.less';
+
+//=====================================
+//  COMMON CLASSES
+//=====================================
+#wrapper {
+  .limiter(@full-width);
+}
+
+.menu-wrap{
+  .link-wrapper{
+    cursor: url('../../../comum/assets/img/close.png'), auto;
+
+    ul{
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.common-limiter {
+  .limiter(@max-width);
+}
+
+.common-text {
+
+  ul,
+  ol {
+    li {
+      list-style-position: inside;
+    }
+  }
+
+  ul {
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+    }
+  }
+}
+
+.link{
+  &:hover, &:active{
+    color: @main-color;
+  }
+}
+
+//=====================================
+//  HEADER
+//=====================================
+header {
+  .navbar {
+    .header-social-icon {
+      a {
+        font-size: 18px;
+
+        &:hover {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
+}
+
+//=====================================
+//  FOOTER
+//=====================================
+#footer {
+  text-align: center;
+}
