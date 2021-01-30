@@ -23,9 +23,28 @@
           <label for="still_link" class="col-form-label">Link</label>
           <input class="form-control" type="text" value="<?php echo isset($item) ? $item->link : ''; ?>" name="link" id="still_link">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="still_images" class="col-form-label">Imagens</label>
-          <input class="form-control" type="file" value="<?php echo ''; ?>" name="images[]" multiple id="images">
+          <input class="form-control dropzone" type="file" name="images[]" multiple id="images">
+        </div> -->
+        <div class="form-group">
+        <div class="upload-container">
+          <div class="imagesUpload">
+                                <?php if (isset($item->images) && !empty($item->images)) { ?>
+                                <?php foreach($item->images as $key => $image){ ?>
+                                      <div>
+                                          <img src="<?php echo base_url('image/resize?w=200&h=102&q=100&src=../userfiles/stills/' . $image->file_name) ?>">
+                                          <span class="del-image"><i class="ti-close"></i></span>
+                                          <input type="hidden" name="images_uploaded[<?php echo $key; ?>]" value="<?php echo $image->id; ?>">
+                                      </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            </div>
+                            <div class="upload-action">
+                                <input type="file" name="images[]" multiple accept="image/*" class="upload-input"/>
+                                <button type="button" class="btn btn-upload">ANEXAR</button>
+                            </div>
+                        </div>
         </div>
         <div class="form-group row">
           <div class="col-md-6">

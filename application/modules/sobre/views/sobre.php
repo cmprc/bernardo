@@ -11,7 +11,9 @@
           </div>
         </div>
         <div class="col-md-4 text-center">
-          <img src="<? //echo site_url('userfiles/blocos/' . $blocks['sobre-um-pouco-sobre-mim']->image); ?>" alt="Bernardo">
+            <?php if(isset($blocks['sobre-um-pouco-sobre-mim']->image)){ ?>
+                <img src="<?= site_url('userfiles/blocos/' . $blocks['sobre-um-pouco-sobre-mim']->image); ?>" alt="Bernardo">
+             <?php } ?>
         </div>
         <div class="col-md-4 text-center">
           <div class="skillbar-bar-main skillbar-bar-style3">
@@ -50,7 +52,7 @@
           <div class="separator-line-verticle-large bg-deep-pink d-inline-block"></div>
         </div>
         <div class="col-12 col-lg-4 col-md-6 md-padding-15px-left sm-margin-30px-bottom text-center  wow fadeInDown" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInDown;">
-          <h6 class="text-white-2 font-weight-300 margin-10px-bottom timer appear" data-speed="10000" data-to="<?= $blocks['sobre-dados-terceiro']->subtitle; ?>"><?= $blocks['sobre-dados-terceiro']->subtitle; ?></h6>
+          <h6 class="text-white-2 font-weight-300 margin-10px-bottom timer appear" data-speed="150000" data-to="<?= $blocks['sobre-dados-terceiro']->subtitle; ?>"><?= $blocks['sobre-dados-terceiro']->subtitle; ?></h6>
           <span class="d-block margin-three-bottom text-small font-weight-400 text-uppercase"><?= $blocks['sobre-dados-terceiro']->title; ?></span>
           <div class="separator-line-verticle-large bg-deep-pink d-inline-block"></div>
         </div>
@@ -98,10 +100,15 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12 col-md-3 text-center"><a href="#"><img src="https://via.placeholder.com/200x60?text=200x60" alt="" data-no-retina=""></a></div>
-        <div class="col-12 col-md-3 text-center"><a href="#"><img src="https://via.placeholder.com/200x60?text=200x60" alt="" data-no-retina=""></a></div>
-        <div class="col-12 col-md-3 text-center"><a href="#"><img src="https://via.placeholder.com/200x60?text=200x60" alt="" data-no-retina=""></a></div>
-        <div class="col-12 col-md-3 text-center"><a href="#"><img src="https://via.placeholder.com/200x60?text=200x60" alt="" data-no-retina=""></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/3g.png'); ?>" alt="3G"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/bellopano.jpg'); ?>" alt="BelloPano"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/linklei.jpg'); ?>" alt="LinkLei"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/marcopolo.jpg'); ?>" alt="Fundação Marcopolo"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/mf.png'); ?>" alt="MF"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/san-martin.jpg'); ?>" alt="San Martin"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/sonhar.png'); ?>" alt="Sonhar"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/soulshi.jpg'); ?>" alt="Soulshi"></a></div>
+        <div class="col-12 col-md-4"><a href="#"><img src="<?= site_url('userfiles/clientes/xtrategy.jpg'); ?>" alt="Xtrategy"></a></div>
       </div>
     </div>
   </div>

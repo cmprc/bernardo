@@ -17,6 +17,9 @@
               <a href="<?php echo site_url('projetos'); ?>" aria-expanded="false"><i class="ti-video-camera"></i><span>Projetos</span></a>
             </li>
             <li class="">
+              <a href="<?php echo site_url('vfx'); ?>" aria-expanded="false"><i class="ti-video-camera"></i><span>VFX</span></a>
+            </li>
+            <li class="">
               <a href="<?php echo site_url('contato'); ?>" aria-expanded="false"><i class="ti-email"></i><span>Contato</span></a>
             </li>
             <li class="">

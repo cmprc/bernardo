@@ -1,7 +1,7 @@
 <div id="add">
   <div class="card">
 
-    <form id="form" data-ctr="<?php echo isset($item) ? 'update' : 'insert'; ?>">
+    <form id="form" method="POST" data-ctr="<?php echo isset($item) ? 'update' : 'insert'; ?>">
       <input type="hidden" name="id" value="<?php echo isset($item) ? $item->id : ''; ?>">
       <div class="card-header">
         <h4 class="header-title"><?php echo !isset($item) ? 'Novo' : ''; ?> Bloco</h4>
@@ -46,8 +46,21 @@
         </div>
 
         <div class="form-group">
-          <label for="block_image" class="col-form-label">Imagem</label>
-          <input class="form-control" type="file" value="<?php echo ''; ?>" name="image" id="block_image">
+            <div class="upload-container">
+                <div class="imagesUpload">
+                    <?php if (isset($item->image) && !empty($item->image)) { ?>
+                        <div>
+                            <img src="<?php echo base_url('image/resize?w=200&h=102&q=100&src=../userfiles/blocos/' . $item->image) ?>">
+                            <span class="del-image"><i class="ti-close"></i></span>
+                            <input type="hidden" name="image_uploaded" value="<?php echo $item->image; ?>">
+                        </div>
+                    <?php } ?>
+                </div>
+                <div class="upload-action">
+                    <input type="file" name="image" accept="image/*" class="upload-input"/>
+                    <button type="button" class="btn btn-upload">ANEXAR</button>
+                </div>
+            </div>
         </div>
 
       </div>

@@ -39,6 +39,9 @@ class Configuracoes extends MY_Controller
     $this->form_validation->set_rules('id', 'ID do Proprietário', 'required');
     $this->form_validation->set_rules('name', 'Nome do Proprietário', 'required');
     $this->form_validation->set_rules('email', 'Email do Proprietário', 'required');
+    $this->form_validation->set_rules('instagram', 'Instagram', 'prep_url|trim');
+    $this->form_validation->set_rules('linkedin', 'Linkedin', 'prep_url|trim');
+    $this->form_validation->set_rules('behance', 'Behance', 'prep_url|trim');
 
     if ($this->form_validation->run() !== FALSE) {
       $response = $this->configuracoes_m->update($data);

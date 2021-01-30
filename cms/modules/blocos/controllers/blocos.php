@@ -101,7 +101,13 @@ class Blocos extends MY_Controller
     $this->form_validation->set_rules('link', 'Link', 'prep_url');
 
     if ($this->form_validation->run() !== FALSE) {
-      $response = $this->blocos_m->update($data);
+        $image = isset($_FILES['image']) ? $_FILES['image'] : FALSE;
+        if($image && !empty($image['name'])){
+            $image = $this->_do_upload('image', '../userfiles/blocos', 'blocos_m');
+            $data['image'] = reset($image);
+        }
+
+        $response = $this->blocos_m->update($data);
 
       $this->output
         ->set_content_type('application/json')

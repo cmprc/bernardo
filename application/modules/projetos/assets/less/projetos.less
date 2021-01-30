@@ -1,7 +1,7 @@
 @import '../../../comum/assets/less/_variables.less';
 
 #projects {
-    .no-videos{
+    .no-videos {
         text-align: center;
         padding: 6rem;
     }
@@ -23,17 +23,31 @@
         }
     }
 
-    .projects-grid{
+    .projects-grid {
         padding-left: 0;
 
-        .grid-item{
-            .dim(100%, auto);
+        .grid-item {
+            .dim(~'calc(100% / 3 - 1rem)', auto);
+            margin: 0 .5rem;
 
-            &:not(:last-child){
+            &:not(:last-child) {
                 margin-bottom: 2rem;
             }
 
-            iframe{
+            @media screen and (max-width: 1250px) {
+                .dim(~'calc(100% / 2 - 1rem)', auto);
+            }
+
+            @media screen and (max-width: 960px) {
+                .dim(100%, auto);
+                margin: 0;
+
+                &:not(:last-child) {
+                    margin-bottom: 2rem;
+                }
+            }
+
+            iframe {
                 .dim(100%, auto);
                 min-height: 450px;
             }

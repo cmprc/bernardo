@@ -89,19 +89,31 @@ class Blocos_m extends MY_Model
   public function update($data)
   {
     $id = $data['id'];
+    $image_uploaded = isset($data['image_uploaded']) ? $data['image_uploaded'] : FALSE;
     unset($data['id']);
 
     $update = $data;
     $update['slug'] = $this->slugify($update['page'] . '-' . $update['section']);
 
+    if(!$image_uploaded && !isset($data['image'])){
+        $update['image'] = NULL;
+    }
+
     $this->db->trans_start();
+
     $this->db
       ->where('id', $id)
       ->update($this->table, $update);
+
     $this->db->trans_complete();
 
     return $this->db->trans_status();
   }
+
+  public function insert_file($file)
+    {
+        return $file->name . '.' . $file->info->extension;
+    }
 
   public function delete($id)
   {

@@ -30,20 +30,7 @@ class Stills extends MY_Controller
     {
         $id || show_404();
         $item = $this->stills_m->get(array('id' => $id));
-
-        $images = $this->stills_m->get_images(array('id' => $id));
-        if (!empty($images)) {
-            $images = array_map(function ($item) {
-                return (object) array(
-                    'source' => $item->file_name,
-                    'options' => array(
-                        'type' => 'local',
-                    )
-                );
-            }, $images);
-
-            $this->template->set('images', json_encode($images));
-        }
+        $item->images = $this->stills_m->get_images(array('id' => $id));
 
         $this->template
             ->set('item', $item)
@@ -64,29 +51,13 @@ class Stills extends MY_Controller
         $this->form_validation->set_rules('link', 'Link', 'prep_url');
 
         if ($this->form_validation->run() !== FALSE) {
-
-            // if (isset($data['images'])) {
-            //     $images = $data['images'];
-
-            //     $array = array();
-            //     foreach ($images as $image) {
-            //         $image = json_decode($image);
-            //         $path = dirname(__FILE__) . DS . '..' . DS . '..' . DS . '..' . DS . '..' . DS . 'userfiles' . DS . 'stills' . DS;
-            //         $new_name = uniqid() . '.' . pathinfo($image->name, PATHINFO_EXTENSION);
-
-            //         file_put_contents($path . $new_name, base64_decode($image->data));
-            //         $array['images'][] = $new_name;
-            //     }
-
-            //     $data['images'] = $array;
-            // }
-
-
-            $images = $_FILES['images'];
-            foreach ($images as $key => $item) {
-            }
+            $images = isset($_FILES['images']) ? $_FILES['images'] : FALSE;
 
             $response = $this->stills_m->insert($data);
+            if($response && $images && !empty($images['name'])){
+                $images = $this->_do_upload('images', '../userfiles/stills', 'stills_m', $response);
+                $response = $images ? TRUE : FALSE;
+            }
 
             $this->output
                 ->set_content_type('application/json')
@@ -112,7 +83,13 @@ class Stills extends MY_Controller
         $this->form_validation->set_rules('link', 'Link', 'prep_url');
 
         if ($this->form_validation->run() !== FALSE) {
+            $images = isset($_FILES['images']) ? $_FILES['images'] : FALSE;
+
             $response = $this->stills_m->update($data);
+            if($response && $images && !empty($images['name']) && reset($images['name']) != ""){
+                $images = $this->_do_upload('images', '../userfiles/stills', 'stills_m', $response);
+                $response = $images ? TRUE : FALSE;
+            }
 
             $this->output
                 ->set_content_type('application/json')
@@ -122,16 +99,6 @@ class Stills extends MY_Controller
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('status' => FALSE, 'response' => $this->form_validation->error_array())));
         }
-    }
-
-    public function upload_image()
-    {
-        $config['upload_path'] = dirname(__FILE__) . DS . '..' . DS . '..' . DS . '..' . DS . '..' . DS . 'userfiles' . DS . 'stills' . DS;
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 100;
-
-        $this->load->library('upload', $config);
-
     }
 
     public function delete($id)

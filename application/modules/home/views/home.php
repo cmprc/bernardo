@@ -15,7 +15,7 @@
         <div class="swiper-slide width-auto sm-height-auto last-paragraph-no-margin first-slide">
           <div class="height-100 d-flex align-items-center">
             <div class="d-block position-relative">
-              <img src="<?php echo base_img('home/about.jpg'); ?>" alt="" />
+              <img src="<?php echo base_img('home/about.jpg'); ?>" alt="Sobre" />
               <!-- <p class="bottom-text width-100 text-extra-small text-white-2 text-uppercase text-center">Branding and Identity</p> -->
               <div class="scroll-container">
                 <div class="scroll">
@@ -34,7 +34,7 @@
         <div class="swiper-slide width-auto sm-height-auto last-paragraph-no-margin">
           <div class="height-100 d-flex align-items-center">
             <div class="d-block position-relative">
-              <img src="<?php echo base_img('home/project.jpg'); ?>" alt="" />
+              <img src="<?php echo base_img('home/project.jpg'); ?>" alt="Projetos" />
             </div>
             <div class="hover-title-box padding-55px-lr width-300px md-width-100 md-padding-20px-lr">
               <div class="separator width-50px bg-black d-none d-xl-inline-block sm-margin-lr-auto"></div>
@@ -45,7 +45,18 @@
         <div class="swiper-slide width-auto sm-height-auto last-paragraph-no-margin">
           <div class="height-100 d-flex align-items-center">
             <div class="d-block position-relative">
-              <img src="<?php echo base_img('home/stills.jpg'); ?>" alt="" />
+              <img src="<?php echo base_img('home/vfx.jpg'); ?>" alt="VFX" />
+            </div>
+            <div class="hover-title-box padding-55px-lr width-300px md-width-100 md-padding-20px-lr">
+              <div class="separator width-50px bg-black d-none d-xl-inline-block sm-margin-lr-auto"></div>
+              <h3><a class="text-white-2 font-weight-600 alt-font text-white-2-hover" href="<?php echo site_url('vfx'); ?>">VFX</a></h3>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide width-auto sm-height-auto last-paragraph-no-margin">
+          <div class="height-100 d-flex align-items-center">
+            <div class="d-block position-relative">
+              <img src="<?php echo base_img('home/stills.jpg'); ?>" alt="Stills" />
             </div>
             <div class="hover-title-box padding-55px-lr width-300px md-width-100 md-padding-20px-lr">
               <div class="separator width-50px bg-black d-none d-xl-inline-block sm-margin-lr-auto"></div>
@@ -56,7 +67,7 @@
         <div class="swiper-slide width-auto sm-height-auto last-paragraph-no-margin">
           <div class="height-100 d-flex align-items-center">
             <div class="d-block position-relative">
-              <img src="<?php echo base_img('home/contact.jpg'); ?>" alt="" />
+              <img src="<?php echo base_img('home/contact.jpg'); ?>" alt="Contato" />
             </div>
             <div class="hover-title-box padding-55px-lr width-300px md-width-100 md-padding-20px-lr">
               <div class="separator width-50px bg-black d-none d-xl-inline-block sm-margin-lr-auto"></div>

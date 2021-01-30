@@ -3,9 +3,9 @@
     <div class="card-header">
       <h4 class="header-title">Blocos</h4>
       <div class="actions">
-        <a href="<?php echo site_url('blocos/add'); ?>" class="btn btn-dark btn-xs" title="Cadastrar">
+        <!-- <a href="<?php echo site_url('blocos/add'); ?>" class="btn btn-dark btn-xs" title="Cadastrar">
           <i class="las la-plus"></i>
-        </a>
+        </a> -->
       </div>
     </div>
     <div class="card-body">

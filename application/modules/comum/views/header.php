@@ -28,7 +28,7 @@
               <li><a href="<?= site_url(); ?>" class="link">Home</a></li>
               <li><a href="<?= site_url('sobre'); ?>" class="link">Sobre</a></li>
               <li><a href="<?= site_url('projetos'); ?>" class="link">Projetos</a></li>
-              <li><a href="<?= site_url('projetos'); ?>" class="link">VFX</a></li>
+              <li><a href="<?= site_url('vfx'); ?>" class="link">VFX</a></li>
               <li><a href="<?= site_url('stills'); ?>" class="link">Stills</a></li>
               <li><a href="<?= site_url('contato'); ?>" class="link">Contato</a></li>
             </ul>

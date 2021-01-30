@@ -55,12 +55,18 @@ class Stills_m extends MY_Model
     $this->db->from($this->table);
 
     $query = $this->db->get();
+    $return = $query->result();
 
     if ($params['id']) {
-      return $query->row();
+      $return = $query->row();
+    }
+    else{
+      foreach ($return as $key => $value) {
+        $value->images = $this->get_images(array('id' => $value->id));
+      }
     }
 
-    return $query->result();
+    return $return;
   }
 
   public function get_images($params)
@@ -73,7 +79,7 @@ class Stills_m extends MY_Model
     $params = array_merge($options, $params);
 
     $this->db
-      ->select("$this->table_gallery.file_name")
+      ->select("$this->table_gallery.file_name, $this->table_gallery.id")
       ->from($this->table_gallery);
 
     if ($params['id']) {
@@ -100,24 +106,16 @@ class Stills_m extends MY_Model
     );
 
     $images = isset($data['images']) ? $data['images'] : array();
-    unset($data['images']);
+    unset($data['images'], $data['id']);
 
     $insert = array_merge($data, $insert);
 
     $this->db->trans_start();
     $this->db->insert($this->table, $insert);
-
-    if (!empty($images)) {
-      $id = $this->db->insert_id();
-      $insert_images = array();
-      foreach (reset($images) as $image) {
-        $insert_images[] = array('id_still' => $id, 'file_name' => $image);
-      }
-      $this->db->insert_batch($this->table_gallery, $insert_images);
-    }
-
+    $id = $this->db->insert_id();
     $this->db->trans_complete();
-    return $this->db->trans_status();
+
+    return $this->db->trans_status() ? $id : FALSE;
   }
 
   public function update($data)
@@ -128,19 +126,52 @@ class Stills_m extends MY_Model
     );
 
     $id = $data['id'];
-    unset($data['id']);
+    $current_images = $this->get_images(array('id' => $id));
+    $images_uploaded = isset($data['images_uploaded']) ? $data['images_uploaded'] : array();
+    unset($data['id'], $data['images_uploaded']);
 
     $update = array_merge($data, $update);
-    echo '<pre>';die(var_dump($update));
 
     $this->db->trans_start();
+
     $this->db
       ->where('id', $id)
       ->update($this->table, $update);
+
+    if(!empty($current_images)){
+        $this->load->helper('file');
+
+        foreach ($current_images as $key => $image) {
+            if(!in_array($image->id, $images_uploaded)){
+                $this->db->where('id', $image->id)->delete($this->table_gallery);
+                delete_file(site_url('../userfiles/stills/' . $image->file_name));
+            }
+        }
+    }
+
     $this->db->trans_complete();
 
-    return $this->db->trans_status();
+    return $this->db->trans_status() ? $id : FALSE;
   }
+
+  public function insert_file($file)
+    {
+        $this->db->trans_start();
+
+        //Conteudo de file vem do UploadHandler, em libraries
+        $data = array(
+            'id_still' => $file->id_parent,
+            'file_name'  => $file->name . '.' . $file->info->extension,
+        );
+
+        //$this->table_file definido no MY_Model
+        $this->db->insert($this->table_gallery, $data);
+        $id = $this->db->insert_id();
+
+        $this->db->trans_complete();
+
+        return $this->db->trans_status() ? $id : FALSE;
+    }
 
   public function delete($id)
   {
