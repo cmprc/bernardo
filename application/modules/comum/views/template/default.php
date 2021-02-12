@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -59,7 +59,7 @@
   ?>
 </head>
 
-<body>
+<body class="width-100">
   <div id="wrapper">
     <?php echo $header, $content, $footer; ?>
   </div>
@@ -113,9 +113,6 @@
   <script type="text/javascript" src="application/modules/comum/assets/js/instafeed.min.js"></script>
   <!-- retina -->
   <script type="text/javascript" src="application/modules/comum/assets/js/retina.min.js"></script>
-  <!-- revolution -->
-  <!-- <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script> -->
   <script type="text/javascript" src="application/modules/comum/assets/js/main.js?<?= $version; ?>"></script>
 
   <?php echo $body_scripts; ?>

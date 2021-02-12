@@ -1,6 +1,6 @@
 <section id="not-found">
-    <div class="message">
-        <p class="hello"><?php echo T_('Olá!'); ?></p>
-        <p class="text"><?php echo T_('Esta página não foi encontrada :('); ?></p>
+    <?= $this->load->view('comum/page_title', array('title' => '404', 'subtitle' => 'Parece que esta página não existe.')); ?>
+    <div class="container icon">
+        <?php echo load_svg('404.svg'); ?>
     </div>
 </section>

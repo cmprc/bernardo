@@ -8,73 +8,95 @@
 //  COMMON CLASSES
 //=====================================
 #wrapper {
-  .limiter(@full-width);
+    .limiter(@full-width);
 }
 
-.menu-wrap{
-  .link-wrapper{
-    cursor: url('../../../comum/assets/img/close.png'), auto;
+.menu-wrap {
+    .link-wrapper {
+        cursor: url('../../../comum/assets/img/close.png'), auto;
 
-    ul{
-      margin-bottom: 0;
-      padding-left: 0;
+        ul {
+            margin-bottom: 0;
+            padding-left: 0;
+        }
     }
-  }
 }
 
 .common-limiter {
-  .limiter(@max-width);
+    .limiter(@max-width);
 }
 
 .common-text {
 
-  ul,
-  ol {
-    li {
-      list-style-position: inside;
+    ul,
+    ol {
+        li {
+            list-style-position: inside;
+        }
     }
-  }
 
-  ul {
-    li {
-      list-style-type: disc;
+    ul {
+        li {
+            list-style-type: disc;
+        }
     }
-  }
 
-  ol {
-    li {
-      list-style-type: decimal;
+    ol {
+        li {
+            list-style-type: decimal;
+        }
     }
-  }
 }
 
-.link{
-  &:hover, &:active{
-    color: @main-color;
-  }
+.link {
+
+    &:hover,
+    &:active {
+        color: @main-color;
+    }
 }
 
 //=====================================
 //  HEADER
 //=====================================
 header {
-  .navbar {
-    .header-social-icon {
-      a {
-        font-size: 18px;
+    .navbar {
+        .header-social-icon {
+            a {
+                font-size: 18px;
 
-        &:hover {
-          font-size: 18px;
+                &:hover {
+                    font-size: 18px;
+                }
+            }
         }
-      }
     }
-  }
 
+}
+
+//=====================================
+//  NOT FOUND
+//=====================================
+#not-found {
+    .page-title{
+        margin-top: 0rem;
+    }
+
+    .icon {
+        text-align: center;
+        // margin-top: 2rem;
+
+        svg {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 
 //=====================================
 //  FOOTER
 //=====================================
 #footer {
-  text-align: center;
+    text-align: center;
 }
