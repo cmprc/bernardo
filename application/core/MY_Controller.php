@@ -67,7 +67,7 @@ class MY_Controller extends MX_Controller
                 $this->template
                     ->set('class', $this->class)
                     ->set('module', $this->module)
-                    ->set('version', 'v' . $this->config->item('version'))
+                    ->set('version', 'v=' . $this->config->item('version'))
                     ->set('csrf_test_name', $this->security->get_csrf_hash());
 
                 $page = $this->paginas_m->get(array('slug' => $this->module));

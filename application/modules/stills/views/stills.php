@@ -14,6 +14,7 @@
                 <?php foreach ($item->images as $image) { ?>
 
                 <li class="grid-item web branding design fadeInUp" style="position: absolute; left: 0%; top: 0px; visibility: visible; animation-name: fadeInUp;">
+                    <a href="<?= site_url('userfiles/stills/' . $image->file_name); ?>" class="gallery-link">
                     <figure>
                       <div class="portfolio-img">
                         <img src="<?= site_url('userfiles/stills/' . $image->file_name); ?>" alt="<?= $item->name; ?>">
@@ -29,6 +30,7 @@
                         </div>
                       </figcaption>
                     </figure>
+                    </a>
                 </li>
               <?php } ?>
               <?php } ?>

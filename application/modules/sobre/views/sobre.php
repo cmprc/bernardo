@@ -6,7 +6,7 @@
       <div class="row justify-content-center">
         <div class="col-md-4 text-right">
           <h6 class="alt-font"><?= $blocks['sobre-um-pouco-sobre-mim']->title; ?></h6>
-          <div class="alt-font text-small">
+          <div class="alt-font text-small text-gray">
             <?= $blocks['sobre-um-pouco-sobre-mim']->text; ?>
           </div>
         </div>
@@ -18,17 +18,17 @@
         <div class="col-md-4 text-center">
           <div class="skillbar-bar-main skillbar-bar-style3">
             <div class="skillbar margin-45px-bottom appear" data-percent="<?= $blocks['sobre-minhas-habilidades-primeiro']->subtitle; ?>%">
-              <span class="skill-bar-text text-extra-small text-uppercase text-dark-gray"><?= $blocks['sobre-minhas-habilidades-primeiro']->title; ?></span>
+              <span class="skill-bar-text text-extra-small text-uppercase text-gray"><?= $blocks['sobre-minhas-habilidades-primeiro']->title; ?></span>
               <p class="skillbar-bar" style="width: <?= $blocks['sobre-minhas-habilidades-primeiro']->subtitle; ?>%;"></p>
               <span class="skill-bar-percent text-small"><?= $blocks['sobre-minhas-habilidades-primeiro']->subtitle; ?>%</span>
             </div>
             <div class="skillbar margin-45px-bottom appear" data-percent="<?= $blocks['sobre-minhas-habilidades-segundo']->subtitle; ?>%">
-              <span class="skill-bar-text text-extra-small text-uppercase text-dark-gray"><?= $blocks['sobre-minhas-habilidades-segundo']->title; ?></span>
+              <span class="skill-bar-text text-extra-small text-uppercase text-gray"><?= $blocks['sobre-minhas-habilidades-segundo']->title; ?></span>
               <p class="skillbar-bar" style="width: <?= $blocks['sobre-minhas-habilidades-segundo']->subtitle; ?>%;"></p>
               <span class="skill-bar-percent text-small"><?= $blocks['sobre-minhas-habilidades-segundo']->subtitle; ?>%</span>
             </div>
             <div class="skillbar margin-45px-bottom appear" data-percent="<?= $blocks['sobre-minhas-habilidades-terceiro']->subtitle; ?>%">
-              <span class="skill-bar-text text-extra-small text-uppercase text-dark-gray"><?= $blocks['sobre-minhas-habilidades-terceiro']->title; ?></span>
+              <span class="skill-bar-text text-extra-small text-uppercase text-gray"><?= $blocks['sobre-minhas-habilidades-terceiro']->title; ?></span>
               <p class="skillbar-bar" style="width: <?= $blocks['sobre-minhas-habilidades-terceiro']->subtitle; ?>%;"></p>
               <span class="skill-bar-percent text-small"><?= $blocks['sobre-minhas-habilidades-terceiro']->subtitle; ?>%</span>
             </div>

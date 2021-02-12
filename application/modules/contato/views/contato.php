@@ -18,7 +18,7 @@
         <div class="col-md-4 item">
           <div class="data-wrapper padding-eighteen-lr lg-padding-twelve-lr text-center md-padding-ten-lr sm-padding-seven-all">
             <i class="fab fa-whatsapp fa-2x"></i>
-            <a class="margin-15px-left text-large" href="tel:<?= $configs->phone; ?>"><?= $configs->phone; ?></a>
+            <a class="margin-15px-left text-large" target="_blank" href="https://api.whatsapp.com/send?phone=55<?= str_replace(' ', '', (str_replace('(', '', str_replace(')', '', $configs->whatsapp)))); ?>"><?= $configs->whatsapp; ?></a>
           </div>
         </div>
       </div>

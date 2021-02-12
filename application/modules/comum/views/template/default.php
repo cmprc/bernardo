@@ -43,11 +43,11 @@
   <!-- bootsnav -->
   <link rel="stylesheet" href="application/modules/comum/assets/css/bootsnav.css">
   <!-- style -->
-  <link rel="stylesheet" href="application/modules/comum/assets/css/style.css" />
+  <link rel="stylesheet" href="application/modules/comum/assets/css/style.css?<?= $version; ?>" />
   <!-- responsive css -->
-  <link rel="stylesheet" href="application/modules/comum/assets/css/responsive.css" />
+  <link rel="stylesheet" href="application/modules/comum/assets/css/responsive.css?<?= $version; ?>" />
 
-  <link rel="stylesheet" href="application/modules/comum/assets/css/main.css" />
+  <link rel="stylesheet" href="application/modules/comum/assets/css/main.css?<?= $version; ?>" />
 
   <!--[if IE]>
             <script src="js/html5shiv.js"></script>
@@ -116,7 +116,7 @@
   <!-- revolution -->
   <!-- <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
     <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script> -->
-  <script type="text/javascript" src="application/modules/comum/assets/js/main.js"></script>
+  <script type="text/javascript" src="application/modules/comum/assets/js/main.js?<?= $version; ?>"></script>
 
   <?php echo $body_scripts; ?>
 

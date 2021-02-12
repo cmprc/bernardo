@@ -1204,7 +1204,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.lightbox-portfolio').magnificPopup({
+    $('.lightbox-portfolio, .portfolio-grid').magnificPopup({
         delegate: '.gallery-link',
         type: 'image',
         tLoading: 'Loading image #%curr%...',

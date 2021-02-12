@@ -2709,10 +2709,16 @@ header.sticky nav.navbar.brand-center ul.nav > li > a {padding: 20px; margin: 0 
 .swiper-bottom-scrollbar-full .swiper-scrollbar { left: 0; opacity: 1; position: absolute; width: 100%; bottom:0; border-radius: 0; height: 3px }
 .swiper-bottom-scrollbar-full .swiper-scrollbar-drag {border-radius: 0; background: }
 .swiper-bottom-scrollbar-full .swiper-scrollbar {background: rgba(255,255,255,.2)}
-.swiper-bottom-scrollbar-full .swiper-slide img {max-height: 400px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; opacity: .8; -webkit-filter: grayscale(1); filter: grayscale(1); -webkit-filter: grayscale(1); -moz-filter: grayscale(1); -ms-filter: grayscale(1); -o-filter: grayscale(1);}
+.swiper-bottom-scrollbar-full .swiper-slide img {max-height: 400px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; opacity: 1; -webkit-filter: grayscale(1) brightness(3); filter: grayscale(1) brightness(3); -webkit-filter: grayscale(1) brightness(3); -moz-filter: grayscale(1) brightness(3); -ms-filter: grayscale(1) brightness(3); -o-filter: grayscale(1) brightness(3);}
+.swiper-bottom-scrollbar-full .swiper-slide img.no-light {max-height: 400px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; opacity: 1; -webkit-filter: grayscale(1); filter: grayscale(1); -webkit-filter: grayscale(1); -moz-filter: grayscale(1); -ms-filter: grayscale(1); -o-filter: grayscale(1);}
 
 .swiper-bottom-scrollbar-full .swiper-slide img.signature{filter: none!important; opacity: 1}
 .swiper-bottom-scrollbar-full .swiper-slide:hover img:not(.signature){max-height: 450px;}
+
+@media screen and (max-width: 992px){
+    .swiper-bottom-scrollbar-full .swiper-slide:hover img:not(.signature){max-height: inherit;}
+}
+
 .swiper-bottom-scrollbar-full .swiper-slide:hover img{opacity: 1; -webkit-filter: grayscale(0); -moz-filter: grayscale(0); -ms-filter: grayscale(0); -o-filter: grayscale(0); filter: grayscale(0); filter: contrast(130%); -webkit-filter:contrast(130%); -moz-filter: contrast(130%); -ms-filter: contrast(130%); -o-filter: contrast(130%); max-height: 400px; }
 .swiper-bottom-scrollbar-full .swiper-slide .hover-title-box { visibility: hidden; }
 .swiper-bottom-scrollbar-full .swiper-slide:hover {z-index: 1;}

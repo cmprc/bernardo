@@ -245,49 +245,14 @@ class MY_Controller extends MX_Controller
                     'optmized'      => FALSE
                 );
 
-                if (isset($info['APP13'])) {
-                    $iptc = iptcparse($info['APP13']);
+                // if ($this->config->item('image-optimization')) {
+                //     // echo '<pre>';die(var_dump($newPath));
+                //     $this->load->library('ImageOptimization');
+                //     $optimized = $this->imageoptimization->optimize($newPath);
 
-                    $iptcHeaderArray = array(
-                        '2#005' => 'title',
-                        // '2#010'=>'Urgency',
-                        '2#015' => 'category',
-                        '2#025' => 'tags',
-                        // '2#020'=>'Subcategories',
-                        // '2#040'=>'SpecialInstructions',
-                        // '2#055'=>'CreationDate',
-                        '2#080' => 'author',
-                        // '2#085'=>'AuthorTitle',
-                        // '2#090'=>'City',
-                        // '2#095'=>'State',
-                        // '2#101'=>'Country',
-                        // '2#105'=>'Headline',
-                        // '2#110'=>'Source',
-                        // '2#115'=>'PhotoSource',
-                        '2#116' => 'copyright',
-                        '2#120' => 'caption',
-                        // '2#122'=>'captionWriter'
-                    );
-
-                    if (isset($iptc) && is_array($iptc)) {
-                        $head = array();
-                        foreach ($iptc as $key => $value) {
-                            if (isset($iptcHeaderArray[$key])) {
-                                $head[$iptcHeaderArray[$key]] = implode(';', $value);
-                            }
-                        }
-                        $file->info = array_merge($file->info, $head);
-                    }
-                }
-
-                if ($this->config->item('image-optimization')) {
-                    // echo '<pre>';die(var_dump($newPath));
-                    $this->load->library('ImageOptimization');
-                    $optimized = $this->imageoptimization->optimize($newPath);
-
-                    if ($optimized)
-                        $file->info['optimized'] = TRUE;
-                }
+                //     if ($optimized)
+                //         $file->info['optimized'] = TRUE;
+                // }
 
                 $file->info = (object) $file->info;
                 $file->info->path = $gallerypath;

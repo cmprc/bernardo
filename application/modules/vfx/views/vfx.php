@@ -1,5 +1,5 @@
 <div id="vfx">
-    <?= $this->load->view('comum/page_title', array('title' => 'VFX', 'subtitle' => 'efeitos visuais metabolizados.')); ?>
+    <?= $this->load->view('comum/page_title', array('title' => 'VFX', 'subtitle' => 'efeitos visuais feitos em 2020.')); ?>
 
     <?php if (empty($videos)) { ?>
         <div class="no-videos alt-font font-weight-400 line-height-30 text-small text-white text-uppercase">Não há vídeos cadastrados ainda.</div>
