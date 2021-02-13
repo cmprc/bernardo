@@ -29,7 +29,7 @@ class Login extends MY_Controller
   public function auth()
   {
     $cookie = get_cookie('try_login', TRUE);
-    if ($cookie <= 5) {
+    if ($cookie <= 15) {
       $post = $this->input->post();
 
       if ($this->auth->login($post['password'])) {

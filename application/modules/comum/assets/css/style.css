@@ -2715,9 +2715,9 @@ header.sticky nav.navbar.brand-center ul.nav > li > a {padding: 20px; margin: 0 
 .swiper-bottom-scrollbar-full .swiper-slide img.signature{filter: none!important; opacity: 1}
 .swiper-bottom-scrollbar-full .swiper-slide:hover img:not(.signature){max-height: 450px;}
 
-/* @media screen and (max-width: 992px){
+@media screen and (max-width: 767px){
     .swiper-bottom-scrollbar-full .swiper-slide:hover img:not(.signature){max-height: inherit;}
-} */
+}
 
 .swiper-bottom-scrollbar-full .swiper-slide:hover img{opacity: 1; -webkit-filter: grayscale(0); -moz-filter: grayscale(0); -ms-filter: grayscale(0); -o-filter: grayscale(0); filter: grayscale(0); filter: contrast(130%); -webkit-filter:contrast(130%); -moz-filter: contrast(130%); -ms-filter: contrast(130%); -o-filter: contrast(130%); max-height: 400px; }
 .swiper-bottom-scrollbar-full .swiper-slide .hover-title-box { visibility: hidden; }

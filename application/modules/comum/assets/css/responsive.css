@@ -1455,6 +1455,7 @@
 
     /* swiper-bottom-scrollbar-full */
     .swiper-bottom-scrollbar-full .swiper-slide img {max-height: 450px; opacity:1; filter: contrast(130%); -webkit-filter: contrast(130%); -moz-filter: contrast(130%); -ms-filter: contrast(130%); -o-filter: contrast(130%);}
+    .swiper-bottom-scrollbar-full .swiper-slide img.no-light {max-height: 450px; opacity:1; filter: none;}
     .swiper-bottom-scrollbar-full .swiper-slide:hover img {max-height: 450px; }
     .swiper-bottom-scrollbar-full .bottom-text { opacity: 1; letter-spacing: 3px;}
     .swiper-bottom-scrollbar-full .swiper-slide:hover .bottom-text { opacity: 1; letter-spacing: 3px; left: 0;}
